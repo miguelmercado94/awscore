@@ -1,0 +1,18 @@
+package com.awscore.documentservice.domain.model;
+
+import lombok.Builder;
+import lombok.Getter;
+import lombok.Setter;
+
+@Setter
+@Getter
+@Builder
+public class FileS3 {
+    
+    private String fileFullName;
+    
+    private String locationURL;
+        
+    private byte[] dataByte;
+    
+}

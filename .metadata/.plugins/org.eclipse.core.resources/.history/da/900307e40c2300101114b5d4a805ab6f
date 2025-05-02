@@ -1,0 +1,19 @@
+package com.awscore.autenticacionservice.infrastructure.mapper;
+
+import com.awscore.autenticacionservice.domain.model.Device;
+import com.awscore.autenticacionservice.infrastructure.entity.DeviceEntity;
+import org.mapstruct.Mapper;
+import org.mapstruct.Mapping;
+import org.mapstruct.factory.Mappers;
+
+@Mapper(componentModel = "spring", uses = {UserMapper.class})  
+public interface DeviceMapper {
+
+    DeviceMapper INSTANCE = Mappers.getMapper(DeviceMapper.class);
+
+    @Mapping(source = "userId", target = "user.id") 
+    Device toDto(DeviceEntity entity);
+
+    @Mapping(source = "user.id", target = "userId")
+    DeviceEntity toEntity(Device dto);
+}

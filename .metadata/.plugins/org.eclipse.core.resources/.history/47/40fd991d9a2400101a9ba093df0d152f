@@ -1,0 +1,5 @@
+package com.awscore.documentservice.controller.response;
+
+public class FileResponse {
+
+}

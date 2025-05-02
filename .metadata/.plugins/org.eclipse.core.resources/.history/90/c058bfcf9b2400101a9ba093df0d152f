@@ -1,0 +1,12 @@
+package com.awscore.documentservice.domain.usecase;
+
+import com.awscore.documentservice.domain.model.FileS3;
+
+import reactor.core.publisher.Mono;
+
+public interface S3FileService {
+
+	
+	public Mono<String> uploadFile(FileS3 file);
+	
+}

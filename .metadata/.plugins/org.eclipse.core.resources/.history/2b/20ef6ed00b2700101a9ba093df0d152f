@@ -1,0 +1,5 @@
+package com.awscore.autenticacionservice.configuration;
+
+public class AwsSqsConfig {
+
+}

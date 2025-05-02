@@ -1,0 +1,5 @@
+package com.awscore.documentservice.domain.infrastructure.adapter;
+
+public interface S3Repository {
+
+}

@@ -1,0 +1,11 @@
+spring.application.name=autenticacion-service
+application.security.jwt.secret-key=Mcwb1kWnPaJylhK8wFUdHDZxvffNe4ZQaJ8XJ/cRc8sbwKpl9YUwAVm7c2bkmHsI
+application.security.jwt.expiration=86400
+application.security.jwt.refresh-token.expiration=604800
+
+spring.r2dbc.url=r2dbc:postgresql://dbtoken.ce9qm2yy2gs8.us-east-1.rds.amazonaws.com:5432/postgres?sslmode=require
+spring.r2dbc.username=postgres
+spring.r2dbc.password=postgres
+spring.r2dbc.pool.enabled=true
+spring.show-sql=false
+debug=true

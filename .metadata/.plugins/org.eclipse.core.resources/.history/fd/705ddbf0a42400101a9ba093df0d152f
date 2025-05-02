@@ -1,0 +1,36 @@
+package com.awscore.documentservice.domain.infrastructure.adapter;
+
+import java.io.ByteArrayInputStream;
+import java.io.InputStream;
+
+import org.springframework.stereotype.Service;
+
+import com.awscore.documentservice.domain.model.FileS3;
+
+import software.amazon.awssdk.services.s3.S3Client;
+import software.amazon.awssdk.services.s3.model.PutObjectRequest;
+import software.amazon.awssdk.core.sync.RequestBody;
+
+import lombok.RequiredArgsConstructor;
+
+@Service
+@RequiredArgsConstructor
+public class S3Adapter {
+
+    private final S3Client s3Client;
+
+    public String uploadFile(FileS3 fileS3, String bucketName) {
+        InputStream inputStream = new ByteArrayInputStream(fileS3.getDataByte());
+
+        String key = fileS3.getLocationURL() + "/" + fileS3.getFileFullName();
+
+        PutObjectRequest putObjectRequest = PutObjectRequest.builder()
+                .bucket(bucketName)
+                .key(key)
+                .build();
+
+        s3Client.putObject(putObjectRequest, RequestBody.fromInputStream(inputStream, fileS3.getDataByte().length));
+
+        return "https://" + bucketName + ".s3.amazonaws.com/" + key;
+    }
+}

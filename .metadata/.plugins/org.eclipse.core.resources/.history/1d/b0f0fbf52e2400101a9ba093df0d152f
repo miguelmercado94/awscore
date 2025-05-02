@@ -1,0 +1,8 @@
+spring.application.name=documentservice
+server.port=8082
+
+s3.bucket-name=bucket-pp-profile
+s3.region=us-east-1
+s3.access-key=AKIA2YUGMQILEYIQAMJZ
+s3.secret-key=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
+

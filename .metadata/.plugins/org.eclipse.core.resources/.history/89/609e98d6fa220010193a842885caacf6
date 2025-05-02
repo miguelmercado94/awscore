@@ -1,0 +1,25 @@
+package com.awscore.autenticacionservice;
+
+import com.awscore.autenticacionservice.domain.model.User;
+
+public class Main {
+
+
+ public static void main(String[] args) {
+ // Crear una instancia de User usando el builder de Lombok
+  User user = User.builder()
+ .email("example@example.com")
+ .active(true)
+ .fullPhone("123-456-7890")
+ .numIdentification("ABC123")
+ .password("password123")
+ .build();
+
+// Imprimir los detalles del usuario
+ System.out.println("Email: " + user.getEmail());
+ System.out.println("Activo: " + user.isActive());
+ System.out.println("Teléfono completo: " + user.getFullPhone());
+ System.out.println("Identificación: " + user.getNumIdentification());
+}
+
+}

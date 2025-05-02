@@ -1,0 +1,27 @@
+package com.awscore.autenticacionservice.infrastructure.mapper;
+
+import com.awscore.autenticacionservice.domain.model.User;
+import com.awscore.autenticacionservice.infrastructure.entity.UserEntity;
+import org.mapstruct.Mapper;
+import org.mapstruct.Mapping;
+import org.springframework.stereotype.Component;
+
+@Mapper(componentModel = "spring", uses = {DeviceMapper.class})
+public interface UserMapper {
+
+    @Mapping(source = "numIdentification", target = "numIdentification")
+    @Mapping(source = "email", target = "email")
+    @Mapping(source = "password", target = "password")
+    @Mapping(source = "fullPhone", target = "fullPhone")
+    @Mapping(source = "active", target = "active")
+    @Mapping(source = "device", target = "device")
+    UserEntity toEntity(User dto);
+
+    @Mapping(source = "numIdentification", target = "numIdentification")
+    @Mapping(source = "email", target = "email")
+    @Mapping(source = "password", target = "password")
+    @Mapping(source = "fullPhone", target = "fullPhone")
+    @Mapping(source = "active", target = "active")
+    @Mapping(source = "device", target = "device")
+    User toDto(UserEntity entity);
+}

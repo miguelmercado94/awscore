@@ -1,0 +1,31 @@
+package com.awscore.autenticacionservice.infrastructure.entity;
+
+import org.springframework.data.annotation.Id;
+import org.springframework.data.relational.core.mapping.Table;
+import org.springframework.data.relational.core.mapping.Column;
+import lombok.Getter;
+import lombok.Setter;
+
+@Table("user") // nombre de la tabla en la base de datos
+@Getter
+@Setter
+public class UserEntity {
+
+    @Id
+    private long id;
+
+    @Column("num_identification")
+    private String numIdentification;
+
+    @Column("email")
+    private String email;
+
+    @Column("password")
+    private String password;
+
+    @Column("full_phone")
+    private String fullPhone;
+
+    @Column("active")
+    private boolean active;
+}

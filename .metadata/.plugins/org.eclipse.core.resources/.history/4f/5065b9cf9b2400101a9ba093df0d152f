@@ -1,0 +1,24 @@
+package com.awscore.documentservice.controller;
+
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.RestController;
+
+import lombok.RequiredArgsConstructor;
+import reactor.core.publisher.Mono;
+
+@RestController
+@RequestMapping("/file")
+@RequiredArgsConstructor
+public class FileController {
+
+    private final S3FileService s3FileService;
+
+    @PostMapping("/upload")
+    public Mono<String> uploadFile(@RequestBody FileS3 file) {
+        return s3FileService.uploadFile(file);
+    }
+}
+

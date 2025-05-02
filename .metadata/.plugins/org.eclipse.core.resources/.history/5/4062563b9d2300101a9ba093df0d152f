@@ -1,0 +1,27 @@
+package com.awscore.documentservice.config;
+
+import org.springframework.boot.context.properties.ConfigurationProperties;
+import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.Configuration;
+
+@Configuration
+@ConfigurationProperties(prefix = "s3")
+public class S3Config {
+
+    private String accessKey;
+    private String secretKey;
+    private String region;
+    private String bucketName;
+
+    // Setters necesarios para que Spring inyecte los valores
+
+    @Bean
+    public S3Client s3Client() {
+        AwsBasicCredentials credentials = AwsBasicCredentials.create(accessKey, secretKey);
+        return S3Client.builder()
+                .region(Region.of(region))
+                .credentialsProvider(StaticCredentialsProvider.create(credentials))
+                .build();
+    }
+}
+

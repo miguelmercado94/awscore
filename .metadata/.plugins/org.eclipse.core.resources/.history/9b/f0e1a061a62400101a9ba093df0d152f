@@ -1,0 +1,16 @@
+package com.awscore.documentservice.controller.response;
+
+import lombok.Getter;
+import lombok.Setter;
+
+@Setter
+@Getter
+public class FileResponse {
+
+	private String fileUrlS3;
+	
+	private String version;
+	
+	private boolean isNew;
+	
+}

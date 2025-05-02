@@ -1,0 +1,42 @@
+package com.awscore.autenticacionservice.infrastructure.entity;
+
+import org.springframework.data.annotation.Id;
+import org.springframework.data.relational.core.mapping.Table;
+import org.springframework.data.relational.core.mapping.Column;
+import lombok.Getter;
+import lombok.Setter;
+import java.util.Objects;
+
+@Table("device")
+@Getter
+@Setter
+public class DeviceEntity {
+
+    @Id
+    private Long id;
+
+    @Column("ip")
+    private String ip;
+
+    @Column("description")
+    private String description;
+
+    @Column("user_id")
+    private Long userId; // La relación con User por el ID
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        DeviceEntity that = (DeviceEntity) o;
+        return id.equals(that.id) && 
+               Objects.equals(ip, that.ip) && 
+               Objects.equals(description, that.description) && 
+               Objects.equals(userId, that.userId);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(id, ip, description, userId);
+    }
+}

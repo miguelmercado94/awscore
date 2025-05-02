@@ -1,0 +1,14 @@
+package com.awscore.autenticacionservice.infrastructure.mapper;
+
+import com.awscore.autenticacionservice.domain.model.User;
+import com.awscore.autenticacionservice.infrastructure.entity.UserEntity;
+import org.mapstruct.Mapper;
+import org.mapstruct.factory.Mappers;
+
+@Mapper
+public interface UserMapper {
+    UserMapper INSTANCE = Mappers.getMapper(UserMapper.class);
+
+    UserEntity toEntity(User dto);
+    User toDto(UserEntity entity);
+}

@@ -1,0 +1,5 @@
+package com.awscore.documentservice.domain.model;
+
+public class FileS3 {
+
+}
