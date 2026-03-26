@@ -1,5 +1,0 @@
-package com.awscore.documentservice.domain.infrastructure.adapter;
-
-public class S3Adapter {
-
-}

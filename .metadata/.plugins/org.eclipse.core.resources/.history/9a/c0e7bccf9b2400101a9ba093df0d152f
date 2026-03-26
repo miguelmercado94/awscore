@@ -1,5 +1,0 @@
-package com.awscore.documentservice.controller.request;
-
-public class FileRequest {
-
-}

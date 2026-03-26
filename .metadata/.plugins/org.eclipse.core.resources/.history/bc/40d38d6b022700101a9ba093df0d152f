@@ -1,5 +1,0 @@
-package com.awscore.autenticacionservice.domain.service;
-
-public class SqsService {
-
-}

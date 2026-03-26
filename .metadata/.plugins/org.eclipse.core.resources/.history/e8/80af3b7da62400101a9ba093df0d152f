@@ -1,5 +1,0 @@
-package com.awscore.documentservice.domain.usecase;
-
-public class S3FileServiceImpl {
-
-}
